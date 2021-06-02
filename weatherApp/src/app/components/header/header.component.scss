@@ -1,0 +1,15 @@
+@import "./../../../../src/styles/base";
+.wa-header {
+    height: 80px;
+    box-shadow: $box-shadow;
+    @include all-center;
+    .title {
+        width: calc(100% - 50px);
+        height: 100%;
+        @include pragraph-text($black, 20px, true);
+        @include all-center;
+        @include desktop {
+            @include pragraph-text($black, 30px, true);
+        }
+    }
+}

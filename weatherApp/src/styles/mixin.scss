@@ -1,0 +1,67 @@
+@import "./colors";
+
+$db-color-blue: #387ede;
+$db-color-red: #e85c41;
+$db-color-CornflowerBlue: #6959f3;
+$db-color-ChateauGreen: #3cb04b;
+$dashboard-color-list: ($db-color-blue, $db-color-red, $db-color-CornflowerBlue, $db-color-ChateauGreen, $db-color-blue);
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+}
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin row-center {
+    @include row;
+    justify-content: center;
+}
+@mixin all-center {
+    @include row-center;
+    align-items: center;
+}
+@mixin col-all-center {
+    @include column;
+    justify-content: center;
+    align-items: center;
+}
+/**
+*This mixin is for mobile view
+*/
+@mixin mobile {
+    @media only screen and (max-width: 800px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media only screen and (min-width: 800px) {
+        @content;
+    }
+}
+/**
+* This mixin is for text data
+*/
+@mixin pragraph-text($color: $gray-black, $size: 14px, $bold: false) {
+    color: $color;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: $size;
+    @if $bold {
+        font-weight: bold;
+    }
+}
+/**
+* This mixin is for changing the background color
+*/
+@mixin backgroundColor($index, $colorList) {
+    background-color: nth($colorList, $index);
+}
+
+@mixin randomColor($colorList, $number-of_child) {
+    @for $index from 1 to $number-of_child {
+        &:nth-child(#{$index}) {
+            @include backgroundColor($index, $colorList);
+        }
+    }
+}
