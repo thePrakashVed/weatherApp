@@ -1,9 +1,21 @@
-<app-header ></app-header>
-<div class="es-dashboard">
-    <div class="card-container">
-        <div class="card" >Create category</div>
-        <div class="card" >Category List</div>
-        <div class="card" >Add Product</div>
-        <div class="card" >Product List</div>
+<app-header></app-header>
+<div class="wa-home">
+  <div class="card-container">
+    <div class="card" *ngFor="let cityTemperature of cityTemperatureList"
+      (click)="goToDetails(cityTemperature.cityName)">
+      <span class="city-name">{{cityTemperature.cityName}}</span>
+      <div class="temp-section">
+        <span class="temp-key">SunRise Time: </span>
+        <span>{{formatTime(cityTemperature.sunriseTime)}} AM</span>
+      </div>
+      <div class="temp-section">
+        <span class="temp-key">Sunset Time: </span>
+        <span>{{ formatTime(cityTemperature.sunsetTime)}} PM</span>
+      </div>
+      <div class="temp-section">
+        <span class="temp-key">Temperature: </span>
+        <span>{{(cityTemperature.temperature)}} F</span>
+      </div>
     </div>
+  </div>
 </div>

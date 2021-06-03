@@ -1,5 +1,5 @@
 @import "./../../../../src/styles/base";
-.es-dashboard {
+.wa-home {
     .card-container {
         margin-top: 40px;
         @include row;
@@ -13,14 +13,27 @@
         border: 1px solid $white;
         margin: 0 8px 16px;
         padding: 16px;
-        @include all-center;
         transition: all 0.2s ease-in-out;
         line-height: 24px;
         width: 300px;
         height: 300px;
         cursor: pointer;
-        @include randomColor($dashboard-color-list, 5);
+        @include randomColor($dashboard-color-list, 6);
         @include pragraph-text($white, 20px, true);
+        .city-name {
+            @include pragraph-text($white, 20px, true);
+            @include row-center;
+            padding: 20px;
+        }
+        .temp-section {
+            margin-top: 10px;
+            @include pragraph-text($white, 15px, false);
+            @include row-center;
+        }
+        .temp-key {
+            margin-right: 10px;
+            @include pragraph-text($black, 15px, true);
+        }
     }
 
     .card-container .card:hover {

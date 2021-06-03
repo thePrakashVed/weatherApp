@@ -1,1 +1,19 @@
-<p>details works!</p>
+<app-header [title]="title" [isBackBtnRequired]="true"></app-header>
+<div class="wa-details">
+  <div class="card" *ngFor="let tempDetails of cityTemperatureDetailsList">
+    <div class="details-data">
+      <div class="data-item">
+        <span class="temp-key">Date Time: </span>
+        <span>{{tempDetails.date}}</span>
+      </div>
+      <div class="data-item">
+        <span class="temp-key">Sea Level: </span>
+        <span>{{tempDetails.seaLevel}}</span>
+      </div>
+      <div class="data-item">
+        <span class="temp-key">Temperature: </span>
+        <span>{{tempDetails.temperature}} F</span>
+      </div>
+    </div>
+  </div>
+</div>

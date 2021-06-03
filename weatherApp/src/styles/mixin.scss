@@ -6,22 +6,45 @@ $db-color-CornflowerBlue: #6959f3;
 $db-color-ChateauGreen: #3cb04b;
 $dashboard-color-list: ($db-color-blue, $db-color-red, $db-color-CornflowerBlue, $db-color-ChateauGreen, $db-color-blue);
 
+/**
+*This mixin is for Grid Row display
+*/
 @mixin row {
     display: flex;
     flex-direction: row;
 }
+
+/**
+*This mixin is for Grid Column display
+*/
+
 @mixin column {
     display: flex;
     flex-direction: column;
 }
+
+/**
+*This mixin is for Grid row and align the content to horizontal center.
+*/
+
 @mixin row-center {
     @include row;
     justify-content: center;
 }
+
+/**
+*This mixin is for Grid row and align the content to horizontal and vertical center.
+*/
 @mixin all-center {
     @include row-center;
     align-items: center;
+    text-align: center;
 }
+
+/**
+*This mixin is for Grid column and align the content to horizontal and vertical center.
+*/
+
 @mixin col-all-center {
     @include column;
     justify-content: center;
@@ -35,13 +58,18 @@ $dashboard-color-list: ($db-color-blue, $db-color-red, $db-color-CornflowerBlue,
         @content;
     }
 }
+
+/**
+*This mixin is for Desktop view
+*/
+
 @mixin desktop {
     @media only screen and (min-width: 800px) {
         @content;
     }
 }
 /**
-* This mixin is for text data
+* This mixin is for style for text data
 */
 @mixin pragraph-text($color: $gray-black, $size: 14px, $bold: false) {
     color: $color;
@@ -57,6 +85,10 @@ $dashboard-color-list: ($db-color-blue, $db-color-red, $db-color-CornflowerBlue,
 @mixin backgroundColor($index, $colorList) {
     background-color: nth($colorList, $index);
 }
+
+/**
+*This mixin is for update the bg color based on array of color.
+*/
 
 @mixin randomColor($colorList, $number-of_child) {
     @for $index from 1 to $number-of_child {
