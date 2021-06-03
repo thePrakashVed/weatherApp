@@ -50,4 +50,9 @@
         transform: translateY(-4px);
         box-shadow: $box-shadow;
     }
+    .no-data {
+       @include all-center;
+        height: 70vh;
+        @include pragraph-text($black, 30px, true)
+    }
 }
