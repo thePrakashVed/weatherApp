@@ -1,6 +1,6 @@
 # weatherApp - Angular - v 11.2
 
-In this app, We can see List of 5 European cities and its respective temperatures.
+In this app, we can see List of 5 European cities and its respective temperatures.<br />
 After clicking on any city we will find temperature of last 5 days and seaLevel.
 
 ### We are showing the below Data in Website
